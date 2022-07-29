@@ -19,10 +19,11 @@ class Post(models.Model):
 class Comment(models.Model):
     def __str__(self):
         return self.text
-
+   
     blog_id = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='comments', null=True)
     text = models.CharField(max_length=50)
+   
 
 
 class Hashtag(models.Model):
